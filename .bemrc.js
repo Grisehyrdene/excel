@@ -3,6 +3,7 @@ module.exports = {
     modules: {
         "bem-tools": {
             plugins: {
+
                 create: {
                     techs: ["html", "scss", "js"],
                     levels: {

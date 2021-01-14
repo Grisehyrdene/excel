@@ -1,56 +1,9 @@
-<div id="app" class="container">
+import {ExcelComponent} from "../../core/ExcelComponent";
 
-    <div class="excel">
-
-        <div class="excel__header">
-
-            <label>
-                <input type="text" class="input" value="Новая таблица">
-            </label>
-
-            <div>
-                <div class="button">
-                <span class="material-icons">exit_to_app</span>
-                </div>
-                <div class="button">
-                <span class="material-icons">delete</span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="excel__toolbar">
-            <div class="button">
-                <span class="material-icons" data-title="Жирный текст">format_bold</span>
-            </div>
-            <div class="button">
-                <span class="material-icons">format_italic</span>
-            </div>
-            <div class="button">
-                <span class="material-icons">format_strikethrough</span>
-            </div>
-            <div class="button">
-                <span class="material-icons">format_align_left</span>
-            </div>
-            <div class="button">
-                <span class="material-icons">format_align_center</span>
-            </div>
-            <div class="button">
-                <span class="material-icons">format_align_right</span>
-            </div>
-
-        </div>
-
-        <div class="excel__formula">
-            <div class="info">fx</div>
-            <div class="input" contenteditable="true" spellcheck="false"></div>
-
-        </div>
-
-        <div class="excel__table">
-
-
-            <div class="row">
+export class Table extends ExcelComponent{
+    static className = 'excel__table';
+    toHTML() {
+        return `<div class="row">
 
                 <div class="row-info"></div>
 
@@ -172,16 +125,6 @@
                     <div class="cell">B2</div>
                     <div class="cell">C3</div>
                 </div>
-            </div>
-
-        </div>
-
-
-
-
-
-    </div>
-
-
-    </div>
-
+            </div>`
+    }
+}
