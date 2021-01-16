@@ -2,7 +2,7 @@ import {$} from "../../core/dom";
 
 export class Excel{
     constructor(selector, options) {
-        this.$el = document.querySelector(selector);
+        this.$el = $(selector);
         this.components = options.components || [];
     }
 
@@ -13,12 +13,12 @@ export class Excel{
 
         this.components.forEach(Component =>{
            // в статических полях класса мы объявили название CSS класса
-           const $el = $.create('div', Component.className)
+           const $el = $.create('div', Component.className);
 
            // создаём экземпляр класса
            const component = new Component($el);
            // получаем его HTML
-           $el.innerHTML = component.toHTML();
+           $el.html(component.toHTML());
            // добавляем внутрь обёртки
            $root.append($el);
        });
